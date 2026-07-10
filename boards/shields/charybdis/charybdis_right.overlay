@@ -1,6 +1,4 @@
 #include "charybdis.dtsi"
-#include "charybdis_3610.dtsi"
-#include "split_input_common.dtsi"
 
 &default_transform {
 	col-offset = <5>;
@@ -24,15 +22,4 @@
 		, <&pro_micro 4 GPIO_ACTIVE_HIGH>
 		, <&pro_micro 9 GPIO_ACTIVE_HIGH>
 		;
-};
-
-&spi0 {
-    status = "okay";
-};
-
-/ {
-    trackball_listener {
-        status = "okay";
-        device = <&trackball>;
-    };
 };

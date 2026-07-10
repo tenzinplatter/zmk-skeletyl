@@ -1,16 +1,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEF 0
 #define NAV 1
 #define NUM 2
 #define FUN 3
-#define MOU 4
-#define SCR 5
-#define SNI 6
 
 /*
  * Key positions (3x5 + 3 left thumb + 2 right thumb):
@@ -56,7 +52,7 @@
 &kp Q       &kp W       &kp E        &kp R        &kp T          &kp Y        &kp U        &kp I       &kp O       &kp P
 &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G          &kp H        &mt RSHFT J  &mt RCTRL K &mt RALT L  &mt RGUI SEMI
 &kp Z       &kp X       &kp C        &kp V        &kp B          &kp N        &kp M        &kp COMMA   &kp DOT     &kp FSLH
-                         &mo MOU      &kp SPACE    &lt NAV TAB    &lt NUM BSPC &kp ENTER
+                         &mo FUN      &kp SPACE    &lt NAV TAB    &lt NUM BSPC &kp ENTER
             >;
         };
 
@@ -87,36 +83,6 @@
 &kp F11     &kp F4      &kp F5      &kp F6       &trans         &out OUT_TOG &kp C_PP     &kp C_VOL_DN &kp C_VOL_UP &bt BT_CLR
 &kp F10     &kp F1      &kp F2      &kp F3       &trans         &trans       &trans       &trans       &trans       &bootloader
                          &trans      &trans       &trans         &trans       &trans
-            >;
-        };
-
-        mouse_layer {
-            display-name = "MOU";
-            bindings = <
-&trans      &trans      &trans       &trans       &trans         &trans       &trans       &trans      &trans      &trans
-&trans      &trans      &mo SNI      &mo SCR      &trans         &trans       &mkp LCLK    &mkp RCLK   &trans      &trans
-&trans      &trans      &trans       &trans       &trans         &trans       &mkp MCLK    &trans      &trans      &trans
-                        &trans       &trans       &trans         &trans       &trans
-            >;
-        };
-
-        scroll_layer {
-            display-name = "SCR";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
-            >;
-        };
-
-        snipe_layer {
-            display-name = "SNI";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
             >;
         };
     };
