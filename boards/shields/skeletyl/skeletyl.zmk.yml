@@ -1,11 +1,11 @@
 file_format: "1"
-id: charybdis
-name: Charybdis Nano
+id: skeletyl
+name: Skeletyl Nano
 type: shield
 url: https://github.com/Bastardkb/Skeletyl/
 requires: [pro_micro]
 features:
   - keys
 siblings:
-  - charybdis_left
-  - charybdis_right
+  - skeletyl_left
+  - skeletyl_right

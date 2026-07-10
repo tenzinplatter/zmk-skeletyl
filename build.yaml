@@ -1,8 +1,8 @@
 ---
 include:
   - board: nice_nano//zmk
-    shield: charybdis_left
+    shield: skeletyl_left
   - board: nice_nano//zmk
-    shield: charybdis_right
+    shield: skeletyl_right
   - board: nice_nano//zmk
     shield: settings_reset

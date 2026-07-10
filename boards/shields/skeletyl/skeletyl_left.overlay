@@ -1,4 +1,4 @@
-#include "charybdis.dtsi"
+#include "skeletyl.dtsi"
 
 &kscan0 {
 	compatible = "zmk,kscan-gpio-matrix";
