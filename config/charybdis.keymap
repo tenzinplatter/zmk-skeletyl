@@ -1,0 +1,123 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEF 0
+#define NAV 1
+#define NUM 2
+#define FUN 3
+#define MOU 4
+#define SCR 5
+#define SNI 6
+
+/*
+ * Key positions (3x5 + 3 left thumb + 2 right thumb):
+ * ╭──────┬──────┬──────┬──────┬──────╮  ╭──────┬──────┬──────┬──────┬──────╮
+ *    00     01     02     03     04        05     06     07     08     09
+ * ├──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┤
+ *    10     11     12     13     14        15     16     17     18     19
+ * ├──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┤
+ *    20     21     22     23     24        25     26     27     28     29
+ * ╰──────┴──────┴──────┼──────┼──────┤  ├──────┼──────┼──────┴──────┴──────╯
+ *                  30     31     32        33     34
+ *               ╰──────┴──────┴──────╯  ╰──────┴──────╯
+ */
+
+&lt {
+    tapping-term-ms = <200>;
+    flavor = "balanced";
+    quick-tap-ms = <150>;
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    flavor = "balanced";
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_fn {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&mo FUN>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "DEF";
+            bindings = <
+&kp Q       &kp W       &kp E        &kp R        &kp T          &kp Y        &kp U        &kp I       &kp O       &kp P
+&mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G          &kp H        &mt RSHFT J  &mt RCTRL K &mt RALT L  &mt RGUI SEMI
+&kp Z       &kp X       &kp C        &kp V        &kp B          &kp N        &kp M        &kp COMMA   &kp DOT     &kp FSLH
+                         &mo MOU      &kp SPACE    &lt NAV TAB    &lt NUM BSPC &kp ENTER
+            >;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+&kp ESC     &trans      &trans       &trans       &trans         &kp HOME     &kp PG_DN    &kp PG_UP   &kp END     &kp DEL
+&kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &trans         &kp LEFT     &kp DOWN     &kp UP      &kp RIGHT   &kp ENTER
+&kp LC(Z)   &kp LC(X)   &kp LC(C)    &kp LC(V)    &kp LC(Y)      &trans       &trans       &trans      &trans      &trans
+                         &trans       &trans       &trans         &kp BSPC     &kp DEL
+            >;
+        };
+
+        num_layer {
+            display-name = "NUM";
+            bindings = <
+&kp LBRC    &kp AMPS    &kp ASTRK   &kp LPAR     &kp RBRC       &trans       &kp N7       &kp N8      &kp N9      &kp N0
+&kp COLON   &kp DLLR    &kp PRCNT   &kp CARET    &kp PLUS       &trans       &kp N4       &kp N5      &kp N6      &kp EQUAL
+&kp TILDE   &kp EXCL    &kp AT      &kp POUND    &kp PIPE       &trans       &kp N1       &kp N2      &kp N3      &kp BSLH
+                         &kp RPAR    &kp LPAR     &kp UNDER      &trans       &trans
+            >;
+        };
+
+        fun_layer {
+            display-name = "FUN";
+            bindings = <
+&kp F12     &kp F7      &kp F8      &kp F9       &kp PSCRN      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+&kp F11     &kp F4      &kp F5      &kp F6       &trans         &out OUT_TOG &kp C_PP     &kp C_VOL_DN &kp C_VOL_UP &bt BT_CLR
+&kp F10     &kp F1      &kp F2      &kp F3       &trans         &trans       &trans       &trans       &trans       &bootloader
+                         &trans      &trans       &trans         &trans       &trans
+            >;
+        };
+
+        mouse_layer {
+            display-name = "MOU";
+            bindings = <
+&trans      &trans      &trans       &trans       &trans         &trans       &trans       &trans      &trans      &trans
+&trans      &trans      &mo SNI      &mo SCR      &trans         &trans       &mkp LCLK    &mkp RCLK   &trans      &trans
+&trans      &trans      &trans       &trans       &trans         &trans       &mkp MCLK    &trans      &trans      &trans
+                        &trans       &trans       &trans         &trans       &trans
+            >;
+        };
+
+        scroll_layer {
+            display-name = "SCR";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans    &trans  &trans
+            >;
+        };
+
+        snipe_layer {
+            display-name = "SNI";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans    &trans  &trans
+            >;
+        };
+    };
+};
