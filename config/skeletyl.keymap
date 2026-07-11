@@ -117,10 +117,10 @@
         num_layer {
             display-name = "NUM";
             bindings = <
-&kp LBRC    &kp AMPS    &kp ASTRK   &kp LPAR     &kp RBRC       &kp SQT      &kp N7       &kp N8      &kp N9      &kp N0
-&trans      &trans      &trans       &trans       &kp PLUS       &kp MINUS    &trans       &trans      &trans      &trans
-&kp TILDE   &kp EXCL    &kp AT      &kp POUND    &kp PIPE       &kp GRAVE    &kp N1       &kp N2      &kp N3      &kp BSLH
-                         &kp RPAR    &kp LPAR     &kp UNDER      &trans       &trans       &trans
+&kp TILDE   &kp AMPS    &kp ASTRK   &kp PLUS     &kp PIPE       &kp SQT      &kp N7       &kp N8      &kp N9      &kp N0
+&kp COLON   &kp DLLR    &kp PRCNT   &kp CARET    &kp EQUAL      &kp MINUS    &kp N4       &kp N5      &kp N6      &kp UNDER
+&kp GRAVE   &kp EXCL    &kp AT      &kp POUND    &kp BSLH       &trans       &kp N1       &kp N2      &kp N3      &trans
+                         &trans      &trans       &trans         &trans       &trans       &trans
             >;
         };
 
