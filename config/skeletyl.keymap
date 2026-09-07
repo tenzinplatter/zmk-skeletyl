@@ -72,8 +72,8 @@
             display-name = "NAV";
             bindings = <
 &kp ESC     &trans      &trans       &trans       &trans         &kp HOME     &kp PG_DN    &kp PG_UP   &kp END     &kp DEL
-&kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &trans         &kp LEFT     &kp DOWN     &kp UP      &kp RIGHT   &kp ENTER
 &trans      &kp LBKT    &kp LBRC     &kp LPAR     &trans         &trans       &kp RPAR     &kp RBRC    &kp RBKT    &trans
+&kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &trans         &kp LEFT     &kp DOWN     &kp UP      &kp RIGHT   &kp ENTER
                          &trans       &trans       &trans         &kp BSPC     &kp DEL      &trans
             >;
         };
