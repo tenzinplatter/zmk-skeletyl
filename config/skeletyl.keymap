@@ -73,7 +73,7 @@
             bindings = <
 &kp ESC     &trans      &trans       &trans       &trans         &kp HOME     &kp PG_DN    &kp PG_UP   &kp END     &kp DEL
 &trans      &kp LBKT    &kp LBRC     &kp LPAR     &trans         &trans       &kp RPAR     &kp RBRC    &kp RBKT    &trans
-&kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &trans         &kp LEFT     &kp DOWN     &kp UP      &kp RIGHT   &kp ENTER
+&kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &trans         &trans       &trans       &trans      &trans      &kp ENTER
                          &trans       &trans       &trans         &kp BSPC     &kp DEL      &trans
             >;
         };
@@ -91,8 +91,8 @@
         fun_layer {
             display-name = "FUN";
             bindings = <
-&kp F12     &kp F7      &kp F8      &kp F9       &kp PSCRN      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
 &kp F11     &kp F4      &kp F5      &kp F6       &kp CAPS       &out OUT_TOG &kp C_PP     &kp C_VOL_DN &kp C_VOL_UP &bt BT_CLR
+&kp F12     &kp F7      &kp F8      &kp F9       &kp PSCRN      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans
 &kp F10     &kp F1      &kp F2      &kp F3       &trans         &kp C_PREV   &kp C_NEXT   &kp LC(LS(N5)) &kp LC(LS(SQT)) &trans
                          &trans      &trans       &trans         &trans       &trans       &trans
             >;
